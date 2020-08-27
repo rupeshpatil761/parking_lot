@@ -1,8 +1,10 @@
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\exception\ParkingLotException.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\constants\ParkingSpotType.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\model\Car.java
-D:\GitClient\parking_lot\src\main\java\com\parkinglot\model\CarSpot.java
-D:\GitClient\parking_lot\src\main\java\com\parkinglot\model\MotorbikeSpot.java
+D:\GitClient\parking_lot\src\main\java\com\parkinglot\exception\SpotAlreadyOccupiedException.java
+D:\GitClient\parking_lot\src\main\java\com\parkinglot\model\CompactSpot.java
+D:\GitClient\parking_lot\src\main\java\com\parkinglot\model\MotorBikeSpot.java
+D:\GitClient\parking_lot\src\main\java\com\parkinglot\exception\InvalidSpotException.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\constants\VehicleType.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\util\DisplayBoard.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\App.java
