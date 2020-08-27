@@ -1,6 +1,6 @@
 package com.parkinglot.util;
 
-public class OutputPrinter {
+public class DisplayBoard {
 
 	public void welcome() {
 		printWithNewLine("Welcome to Parking lot.");

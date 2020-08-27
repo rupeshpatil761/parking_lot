@@ -1,2 +1,13 @@
-com\parkinglot\util\OutputPrinter.class
+com\parkinglot\constants\ParkingTicketStatus.class
+com\parkinglot\model\ParkingSpot.class
+com\parkinglot\model\MotorbikeSpot.class
+com\parkinglot\model\Vehicle.class
 com\parkinglot\App.class
+com\parkinglot\util\DisplayBoard.class
+com\parkinglot\constants\ParkingSpotType.class
+com\parkinglot\model\Car.class
+com\parkinglot\model\ParkingTicket.class
+com\parkinglot\exception\ParkingLotException.class
+com\parkinglot\model\CarSpot.class
+com\parkinglot\model\ParkingLot.class
+com\parkinglot\constants\VehicleType.class
