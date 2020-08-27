@@ -4,12 +4,16 @@ com\parkinglot\model\Vehicle.class
 com\parkinglot\model\CompactSpot.class
 com\parkinglot\App.class
 com\parkinglot\util\DisplayBoard.class
+com\parkinglot\exception\ParkingFullException.class
+com\parkinglot\exception\NoFreeSpotAvailableException.class
 com\parkinglot\model\MotorBikeSpot.class
 com\parkinglot\constants\ParkingSpotType.class
 com\parkinglot\model\Car.class
+com\parkinglot\strategy\NearestSpotParkingStrategy.class
 com\parkinglot\model\ParkingTicket.class
 com\parkinglot\exception\InvalidSpotException.class
 com\parkinglot\exception\SpotAlreadyOccupiedException.class
 com\parkinglot\exception\ParkingLotException.class
+com\parkinglot\strategy\ParkingStrategy.class
 com\parkinglot\model\ParkingLot.class
 com\parkinglot\constants\VehicleType.class

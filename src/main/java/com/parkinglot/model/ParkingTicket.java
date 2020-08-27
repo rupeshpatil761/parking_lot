@@ -9,7 +9,7 @@ public class ParkingTicket {
 	
 	private String ticketnumber;
 	
-	private Date issuedAt;
+	private Date issuedAt = new Date();
 	
 	private Date payedAt;
 	

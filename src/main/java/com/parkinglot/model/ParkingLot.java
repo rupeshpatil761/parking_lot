@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.parkinglot.exception.InvalidSpotException;
+import com.parkinglot.exception.ParkingFullException;
 import com.parkinglot.exception.ParkingLotException;
 import com.parkinglot.exception.SpotAlreadyOccupiedException;
 
@@ -11,14 +12,18 @@ public class ParkingLot {
 
 	private static int MAX_CAPACITY = 100000;
 	private int capacity;
-	private Map<Integer, ParkingSpot> parkingSpots;
+
+	/**
+	 * Here we can multiple spots depends on type like compact, motorbike
+	 */
+	private Map<Integer, ParkingSpot> compactParkingSpots;
 
 	public int getCapacity() {
 		return capacity;
 	}
 
-	public Map<Integer, ParkingSpot> getSlots() {
-		return parkingSpots;
+	public Map<Integer, ParkingSpot> getCompactParkingSpots() {
+		return compactParkingSpots;
 	}
 
 	public ParkingLot(final int capacity) {
@@ -26,7 +31,7 @@ public class ParkingLot {
 			throw new ParkingLotException("Invalid capacity given for parking lot.");
 		}
 		this.capacity = capacity;
-		this.parkingSpots = new HashMap<>();
+		this.compactParkingSpots = new HashMap<>();
 	}
 
 	/**
@@ -42,11 +47,11 @@ public class ParkingLot {
 		if (spotNumber > getCapacity() || spotNumber <= 0) {
 			throw new InvalidSpotException();
 		}
-		final Map<Integer, ParkingSpot> allSlots = getSlots();
-		if (!allSlots.containsKey(spotNumber)) {
-			allSlots.put(spotNumber, new CompactSpot(spotNumber));
+		final Map<Integer, ParkingSpot> allCompactSpots = getCompactParkingSpots();
+		if (!allCompactSpots.containsKey(spotNumber)) {
+			allCompactSpots.put(spotNumber, new CompactSpot(spotNumber));
 		}
-		return allSlots.get(spotNumber);
+		return allCompactSpots.get(spotNumber);
 	}
 
 	/**
@@ -79,6 +84,19 @@ public class ParkingLot {
 		final ParkingSpot spot = getParkingSpot(spotNumber);
 		spot.removeVehicle();
 		return spot;
+	}
+
+	// note that the following method is 'synchronized' to allow multiple entrances
+	// panels to issue a new parking ticket without interfering with each other
+	public synchronized ParkingTicket getNewParkingTicket(Vehicle vehicle) {
+		/*if (this.isFull(vehicle.getType())) {
+			throw new ParkingFullException();
+		}*/
+		ParkingTicket ticket = new ParkingTicket();
+		vehicle.assignTicket(ticket);
+		/*this.incrementSpotCount(vehicle.getType());
+		this.activeTickets.put(ticket.getTicketNumber(), ticket);*/
+		return ticket;
 	}
 
 }
