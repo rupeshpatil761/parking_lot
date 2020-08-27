@@ -8,6 +8,7 @@ import com.parkinglot.exception.ParkingFullException;
 import com.parkinglot.exception.ParkingLotException;
 import com.parkinglot.exception.SpotAlreadyOccupiedException;
 
+//make it singleton
 public class ParkingLot {
 
 	private static int MAX_CAPACITY = 100000;
@@ -64,12 +65,12 @@ public class ParkingLot {
 	 * @return {@link ParkingSpot} if the parking succeeds. If the spot is already
 	 *         occupied then {@link SpotAlreadyOccupiedException} is thrown.
 	 */
-	public ParkingSpot park(final Car car, final Integer spotNumber) {
+	public ParkingSpot park(final Vehicle vehicle, final Integer spotNumber) {
 		final ParkingSpot spot = getParkingSpot(spotNumber);
 		if (!spot.isSpotFree()) {
 			throw new SpotAlreadyOccupiedException();
 		}
-		spot.assignVehicle(car);
+		spot.assignVehicle(vehicle);
 		return spot;
 	}
 
