@@ -16,7 +16,7 @@ public class ParkingLotService {
 	private ParkingStrategy parkingStrategy;
 
 	/**
-	 * Allots a parking lot into the parking service. Throwns
+	 * Allots a parking lot into the parking service. Throws
 	 * {@link ParkingLotException} if parkingLot already allocated
 	 * 
 	 * @param parkingLot
@@ -70,8 +70,11 @@ public class ParkingLotService {
 	public List<ParkingSpot> getOccupiedParkingSpots() {
 		validateParkingLotExists();
 		final List<ParkingSpot> occupiedSpotList = new ArrayList<>();
+		// Here we can return occupancy count based on the parking spot type
 		final Map<Integer, ParkingSpot> allSlots = parkingLot.getCompactParkingSpots();
-
+		
+		
+		//try to convert this logic to java 8 streams
 		for (int i = 1; i <= parkingLot.getCapacity(); i++) {
 			if (allSlots.containsKey(i)) {
 				final ParkingSpot slot = allSlots.get(i);

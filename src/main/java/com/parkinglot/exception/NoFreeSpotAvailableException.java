@@ -8,5 +8,4 @@ public class NoFreeSpotAvailableException extends RuntimeException {
 	public NoFreeSpotAvailableException(String message) {
 		super(message);
 	}
-
 }
