@@ -8,6 +8,7 @@ com\parkinglot\exception\NoFreeSpotAvailableException.class
 com\parkinglot\model\MotorBikeSpot.class
 com\parkinglot\strategy\NearestSpotParkingStrategy.class
 com\parkinglot\exception\InvalidSpotException.class
+com\parkinglot\commands\ParkCommandExecutor.class
 com\parkinglot\exception\SpotAlreadyOccupiedException.class
 com\parkinglot\exception\ParkingLotException.class
 com\parkinglot\model\Command.class
@@ -22,6 +23,7 @@ com\parkinglot\model\ParkingTicket.class
 com\parkinglot\service\ParkingLotService.class
 com\parkinglot\commands\CommandExecutor.class
 com\parkinglot\util\ParamValidator.class
+com\parkinglot\util\RandomTicketIdUtil.class
 com\parkinglot\exception\InvalidFileException.class
 com\parkinglot\strategy\ParkingStrategy.class
 com\parkinglot\model\ParkingLot.class

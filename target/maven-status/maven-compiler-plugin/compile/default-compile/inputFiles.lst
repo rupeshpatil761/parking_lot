@@ -18,11 +18,13 @@ D:\GitClient\parking_lot\src\main\java\com\parkinglot\constants\ParkingSpotType.
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\model\Car.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\exception\InvalidFileException.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\model\MotorBikeSpot.java
+D:\GitClient\parking_lot\src\main\java\com\parkinglot\commands\ParkCommandExecutor.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\commands\CreateParkingLotCommandExecutor.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\strategy\NearestSpotParkingStrategy.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\constants\VehicleType.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\model\ParkingLot.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\commands\CommandExecutorFactory.java
+D:\GitClient\parking_lot\src\main\java\com\parkinglot\util\RandomTicketIdUtil.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\util\ParamValidator.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\exception\ParkingFullException.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\constants\ParkingTicketStatus.java

@@ -26,7 +26,7 @@ public class FileUtil {
 
 	void processCommand(final Command command) {
 		final CommandExecutor commandExecutor = commandExecutorFactory.getCommandExecutor(command);
-		if (commandExecutor.validate(command)) {
+		 if (commandExecutor.validate(command)) {
 			commandExecutor.execute(command);
 		} else {
 			throw new InvalidCommandException();

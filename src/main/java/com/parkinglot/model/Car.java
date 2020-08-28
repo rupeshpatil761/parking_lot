@@ -4,7 +4,7 @@ import com.parkinglot.constants.VehicleType;
 
 public class Car extends Vehicle {
 
-	public Car(final String registrationNumber, final String color) {
+	public Car(final String registrationNumber) {
 		super(VehicleType.CAR);
 	}
 }

@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.parkinglot.exception.InvalidSpotException;
-import com.parkinglot.exception.ParkingFullException;
 import com.parkinglot.exception.ParkingLotException;
 import com.parkinglot.exception.SpotAlreadyOccupiedException;
+import com.parkinglot.util.RandomTicketIdUtil;
 
 //make it singleton
 public class ParkingLot {
@@ -56,10 +56,10 @@ public class ParkingLot {
 	}
 
 	/**
-	 * Parks a car into a given spot number.
+	 * Parks a vehicle into a given spot number.
 	 *
-	 * @param car
-	 *            Car to be parked.
+	 * @param vehicle
+	 *            Vehicle to be parked.
 	 * @param spotNumber
 	 *            Spot number in which it has to be parked.
 	 * @return {@link ParkingSpot} if the parking succeeds. If the spot is already
@@ -70,6 +70,7 @@ public class ParkingLot {
 		if (!spot.isSpotFree()) {
 			throw new SpotAlreadyOccupiedException();
 		}
+		assignNewParkingTicket(vehicle);
 		spot.assignVehicle(vehicle);
 		return spot;
 	}
@@ -87,17 +88,10 @@ public class ParkingLot {
 		return spot;
 	}
 
-	// note that the following method is 'synchronized' to allow multiple entrances
-	// panels to issue a new parking ticket without interfering with each other
-	public synchronized ParkingTicket getNewParkingTicket(Vehicle vehicle) {
-		/*if (this.isFull(vehicle.getType())) {
-			throw new ParkingFullException();
-		}*/
-		ParkingTicket ticket = new ParkingTicket();
-		vehicle.assignTicket(ticket);
-		/*this.incrementSpotCount(vehicle.getType());
-		this.activeTickets.put(ticket.getTicketNumber(), ticket);*/
-		return ticket;
+	// Made method as 'synchronized' to allow multiple entrances in future
+	public synchronized void assignNewParkingTicket(Vehicle vehicle) {
+		 ParkingTicket parkingTicket = new ParkingTicket(RandomTicketIdUtil.createTicketId());
+		 vehicle.assignTicket(parkingTicket);
 	}
 
 }

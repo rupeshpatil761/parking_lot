@@ -9,12 +9,13 @@ import com.parkinglot.util.DisplayBoard;
 import com.parkinglot.util.FileUtil;
 
 public class App {
+
 	public static void main(String[] args) throws IOException {
 		final DisplayBoard displayBoard = new DisplayBoard();
 		final ParkingLotService parkingLotService = new ParkingLotService();
 		final CommandExecutorFactory commandExecutorFactory = new CommandExecutorFactory(parkingLotService);
-		
-		if(args.length == 1) {
+
+		if (args.length == 1) {
 			new FileUtil(commandExecutorFactory, displayBoard, args[0]).process();
 		} else {
 			throw new InvalidFileException();

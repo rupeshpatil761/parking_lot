@@ -20,6 +20,8 @@ public class CommandExecutorFactory {
 	    
 	    commands.put(CreateParkingLotCommandExecutor.COMMAND_NAME, new CreateParkingLotCommandExecutor(parkingLotService, displayBoard));
 	    
+	    commands.put(ParkCommandExecutor.COMMAND_NAME, new ParkCommandExecutor(parkingLotService, displayBoard));
+	    
 	  }
 
 	  /**

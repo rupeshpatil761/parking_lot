@@ -15,7 +15,11 @@ public class ParkingTicket {
 	
 	private BigDecimal paymentAmount;
 	
-	private ParkingTicketStatus status;
+	private ParkingTicketStatus status = ParkingTicketStatus.ACTIVE;
+	
+	public ParkingTicket(String ticketNumber) {
+		this.ticketnumber = ticketNumber;
+	}
 
 	public String getTicketnumber() {
 		return ticketnumber;
