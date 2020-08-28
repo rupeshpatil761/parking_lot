@@ -12,11 +12,13 @@ public class CommandExecutorFactory {
 	private Map<String, CommandExecutor> commands = new HashMap<>();
 
 	  public CommandExecutorFactory(final ParkingLotService parkingLotService) {
-	    final DisplayBoard outputPrinter = new DisplayBoard();
+	    final DisplayBoard displayBoard = new DisplayBoard();
 	    
 	    /**
-	     * Will add all commands in map here
+	     * Will add required commands in map here
 	     */
+	    
+	    commands.put(CreateParkingLotCommandExecutor.COMMAND_NAME, new CreateParkingLotCommandExecutor(parkingLotService, displayBoard));
 	    
 	  }
 
