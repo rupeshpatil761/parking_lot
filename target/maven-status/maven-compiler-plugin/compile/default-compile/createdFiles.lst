@@ -3,6 +3,7 @@ com\parkinglot\model\ParkingSpot.class
 com\parkinglot\App.class
 com\parkinglot\commands\CommandExecutorFactory.class
 com\parkinglot\util\DisplayBoard.class
+com\parkinglot\util\FileUtil.class
 com\parkinglot\exception\NoFreeSpotAvailableException.class
 com\parkinglot\model\MotorBikeSpot.class
 com\parkinglot\strategy\NearestSpotParkingStrategy.class
@@ -21,6 +22,7 @@ com\parkinglot\model\ParkingTicket.class
 com\parkinglot\service\ParkingLotService.class
 com\parkinglot\commands\CommandExecutor.class
 com\parkinglot\util\ParamValidator.class
+com\parkinglot\exception\InvalidFileException.class
 com\parkinglot\strategy\ParkingStrategy.class
 com\parkinglot\model\ParkingLot.class
 com\parkinglot\constants\VehicleType.class

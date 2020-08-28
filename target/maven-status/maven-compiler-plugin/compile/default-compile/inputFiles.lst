@@ -7,6 +7,7 @@ D:\GitClient\parking_lot\src\main\java\com\parkinglot\exception\InvalidSpotExcep
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\exception\NoFreeSpotAvailableException.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\util\DisplayBoard.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\App.java
+D:\GitClient\parking_lot\src\main\java\com\parkinglot\util\FileUtil.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\model\ParkingSpot.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\service\ParkingLotService.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\exception\InvalidCommandException.java
@@ -15,6 +16,7 @@ D:\GitClient\parking_lot\src\main\java\com\parkinglot\model\Vehicle.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\exception\ParkingLotException.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\constants\ParkingSpotType.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\model\Car.java
+D:\GitClient\parking_lot\src\main\java\com\parkinglot\exception\InvalidFileException.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\model\MotorBikeSpot.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\commands\CreateParkingLotCommandExecutor.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\strategy\NearestSpotParkingStrategy.java
