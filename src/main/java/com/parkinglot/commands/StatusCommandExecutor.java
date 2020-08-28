@@ -43,7 +43,7 @@ public class StatusCommandExecutor extends CommandExecutor {
     for (ParkingSpot slot : occupiedSlots) {
       final Vehicle parkedVehicle = slot.getParkedVehicle();
       final String slotNumber = slot.getSpotNumber().toString();
-      displayBoard.printWithNewLine(slotNumber+"            " + parkedVehicle.getRegistrationNumber());
+      displayBoard.printWithNewLine(slotNumber+"           " + parkedVehicle.getRegistrationNumber());
     }
   }
 }
