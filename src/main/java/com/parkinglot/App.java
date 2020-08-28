@@ -14,11 +14,11 @@ public class App {
 		final DisplayBoard displayBoard = new DisplayBoard();
 		final ParkingLotService parkingLotService = new ParkingLotService();
 		final CommandExecutorFactory commandExecutorFactory = new CommandExecutorFactory(parkingLotService);
-
-		if (args.length == 1) {
+		new FileUtil(commandExecutorFactory, displayBoard, "").process();
+		/*if (args.length == 1) {
 			new FileUtil(commandExecutorFactory, displayBoard, args[0]).process();
 		} else {
 			throw new InvalidFileException();
-		}
+		}*/
 	}
 }

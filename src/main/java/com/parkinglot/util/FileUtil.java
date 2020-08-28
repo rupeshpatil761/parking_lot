@@ -34,7 +34,7 @@ public class FileUtil {
 	}
 
 	public void process() throws IOException {
-		final File file = new File(fileName);
+		final File file = new File("file_input.txt");
 		final BufferedReader reader;
 		try {
 			reader = new BufferedReader(new FileReader(file));

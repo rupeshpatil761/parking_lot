@@ -3,13 +3,11 @@ package com.parkinglot.commands;
 import com.parkinglot.exception.NoFreeSpotAvailableException;
 import com.parkinglot.model.Car;
 import com.parkinglot.model.Command;
-import com.parkinglot.model.ParkingTicket;
 import com.parkinglot.service.ParkingLotService;
 import com.parkinglot.util.DisplayBoard;
-import com.parkinglot.util.RandomTicketIdUtil;
 
 /**
- * Executor to handle command of parking a car into the parking lot. This outputs the alloted slot
+ * Executor to handle command of parking a vehicle into the parking lot. This outputs the alloted slot
  * in which the car is parked.
  */
 public class ParkCommandExecutor extends CommandExecutor {
@@ -25,7 +23,7 @@ public class ParkCommandExecutor extends CommandExecutor {
    */
   @Override
   public boolean validate(final Command command) {
-    return command.getParams().size() == 2;
+    return command.getParams().size() == 1;
   }
 
   /**
