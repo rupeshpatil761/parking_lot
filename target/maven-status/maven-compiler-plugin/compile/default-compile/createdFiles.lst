@@ -6,6 +6,7 @@ com\parkinglot\util\DisplayBoard.class
 com\parkinglot\util\FileUtil.class
 com\parkinglot\exception\NoFreeSpotAvailableException.class
 com\parkinglot\model\MotorBikeSpot.class
+com\parkinglot\commands\StatusCommandExecutor.class
 com\parkinglot\strategy\NearestSpotParkingStrategy.class
 com\parkinglot\exception\InvalidSpotException.class
 com\parkinglot\commands\ParkCommandExecutor.class

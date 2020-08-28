@@ -6,5 +6,6 @@ public class Car extends Vehicle {
 
 	public Car(final String registrationNumber) {
 		super(VehicleType.CAR);
+		this.setRegistrationNumber(registrationNumber);
 	}
 }

@@ -22,6 +22,8 @@ public class CommandExecutorFactory {
 	    
 	    commands.put(ParkCommandExecutor.COMMAND_NAME, new ParkCommandExecutor(parkingLotService, displayBoard));
 	    
+	    commands.put(StatusCommandExecutor.COMMAND_NAME, new StatusCommandExecutor(parkingLotService, displayBoard));
+
 	  }
 
 	  /**

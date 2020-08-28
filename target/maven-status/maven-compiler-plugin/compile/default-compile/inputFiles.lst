@@ -6,6 +6,7 @@ D:\GitClient\parking_lot\src\main\java\com\parkinglot\strategy\ParkingStrategy.j
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\exception\InvalidSpotException.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\exception\NoFreeSpotAvailableException.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\util\DisplayBoard.java
+D:\GitClient\parking_lot\src\main\java\com\parkinglot\commands\StatusCommandExecutor.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\App.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\util\FileUtil.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\model\ParkingSpot.java
