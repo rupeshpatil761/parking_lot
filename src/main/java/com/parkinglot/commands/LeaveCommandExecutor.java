@@ -1,11 +1,16 @@
 package com.parkinglot.commands;
 
+import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import com.parkinglot.constants.ParkingTicketStatus;
 import com.parkinglot.exception.VehicleNotFoundException;
 import com.parkinglot.model.Command;
 import com.parkinglot.model.ParkingSpot;
+import com.parkinglot.model.ParkingTicket;
+import com.parkinglot.model.Vehicle;
 import com.parkinglot.service.ParkingLotService;
 import com.parkinglot.util.DisplayBoard;
 import com.parkinglot.util.ParamValidator;
@@ -40,9 +45,15 @@ public class LeaveCommandExecutor extends CommandExecutor {
 		double paymentAmount = 10;
 		if(spotMatchingRegNo.isPresent()) {
 			spotNumber = spotMatchingRegNo.get().getSpotNumber();
+			Vehicle vehicle = spotMatchingRegNo.get().getParkedVehicle();
 			if(numHours>2) {
 				paymentAmount = paymentAmount + 10 *(numHours - 2);
 			}
+			ParkingTicket ticket = vehicle.getTicket();
+			ticket.setPayedAt(new Date());
+			ticket.setPaymentAmount(BigDecimal.valueOf(paymentAmount));
+			ticket.setStatus(ParkingTicketStatus.PAID);
+			System.out.println(vehicle);
 		} else {
 			throw new VehicleNotFoundException();
 		}

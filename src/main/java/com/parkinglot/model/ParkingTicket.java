@@ -60,4 +60,10 @@ public class ParkingTicket {
 	public void setStatus(ParkingTicketStatus status) {
 		this.status = status;
 	}
+
+	@Override
+	public String toString() {
+		return "ParkingTicket [ticketnumber=" + ticketnumber + ", issuedAt=" + issuedAt + ", payedAt=" + payedAt
+				+ ", paymentAmount=" + paymentAmount + ", status=" + status + "]";
+	}
 }
