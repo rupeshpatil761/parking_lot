@@ -34,4 +34,9 @@ public abstract class ParkingSpot {
 	public Integer getSpotNumber() {
 		return number;
 	}
+
+	@Override
+	public String toString() {
+		return "ParkingSpot [number=" + number + ", vehicle=" + vehicle + ", type=" + type + "]";
+	}
 }

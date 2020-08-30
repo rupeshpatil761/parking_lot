@@ -2,6 +2,7 @@ com\parkinglot\commands\CreateParkingLotCommandExecutor.class
 com\parkinglot\model\ParkingSpot.class
 com\parkinglot\App.class
 com\parkinglot\commands\CommandExecutorFactory.class
+com\parkinglot\strategy\NearestSpotParkingStrategyNew.class
 com\parkinglot\util\DisplayBoard.class
 com\parkinglot\util\FileUtil.class
 com\parkinglot\exception\NoFreeSpotAvailableException.class
@@ -21,7 +22,9 @@ com\parkinglot\exception\ParkingFullException.class
 com\parkinglot\constants\ParkingSpotType.class
 com\parkinglot\model\Car.class
 com\parkinglot\model\ParkingTicket.class
+com\parkinglot\commands\LeaveCommandExecutor.class
 com\parkinglot\service\ParkingLotService.class
+com\parkinglot\exception\VehicleNotFoundException.class
 com\parkinglot\commands\CommandExecutor.class
 com\parkinglot\util\ParamValidator.class
 com\parkinglot\util\RandomTicketIdUtil.class

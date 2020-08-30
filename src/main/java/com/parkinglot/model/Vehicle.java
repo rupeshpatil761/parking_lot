@@ -35,4 +35,9 @@ public abstract class Vehicle {
 	public void assignTicket(ParkingTicket ticket) {
 		this.ticket = ticket;
 	}
+
+	@Override
+	public String toString() {
+		return "Vehicle [registrationNumber=" + registrationNumber + ", type=" + type + ", ticket=" + ticket + "]";
+	}
 }

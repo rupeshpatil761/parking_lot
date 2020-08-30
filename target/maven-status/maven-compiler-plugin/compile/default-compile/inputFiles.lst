@@ -1,7 +1,9 @@
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\model\Command.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\commands\CommandExecutor.java
+D:\GitClient\parking_lot\src\main\java\com\parkinglot\commands\LeaveCommandExecutor.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\exception\SpotAlreadyOccupiedException.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\model\CompactSpot.java
+D:\GitClient\parking_lot\src\main\java\com\parkinglot\strategy\NearestSpotParkingStrategyNew.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\strategy\ParkingStrategy.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\exception\InvalidSpotException.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\exception\NoFreeSpotAvailableException.java
@@ -12,6 +14,7 @@ D:\GitClient\parking_lot\src\main\java\com\parkinglot\util\FileUtil.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\model\ParkingSpot.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\service\ParkingLotService.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\exception\InvalidCommandException.java
+D:\GitClient\parking_lot\src\main\java\com\parkinglot\exception\VehicleNotFoundException.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\model\ParkingTicket.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\model\Vehicle.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\exception\ParkingLotException.java
