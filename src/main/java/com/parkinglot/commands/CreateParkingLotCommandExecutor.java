@@ -31,7 +31,7 @@ public class CreateParkingLotCommandExecutor extends CommandExecutor {
   @Override
   public void execute(final Command command) {
     final int parkingLotCapacity = Integer.parseInt(command.getParams().get(0));
-    final ParkingLot parkingLot = new ParkingLot(parkingLotCapacity);
+    final ParkingLot parkingLot = ParkingLot.getInstance(parkingLotCapacity);
     parkingLotService.createParkingLot(parkingLot, new NearestSpotParkingStrategy());
     displayBoard.createParkingLot(parkingLot.getCapacity());
   }

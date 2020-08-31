@@ -19,20 +19,29 @@ public class ParkingLot {
 	 */
 	private Map<Integer, ParkingSpot> compactParkingSpots;
 
+	private static ParkingLot parkingLot = null;
+
+	private ParkingLot() {
+	}
+
+	public static ParkingLot getInstance(final int capacity) {
+		if (parkingLot == null) {
+			if (capacity > MAX_CAPACITY || capacity <= 0) {
+				throw new ParkingLotException("Invalid capacity given for parking lot.");
+			}
+			parkingLot = new ParkingLot();
+			parkingLot.capacity = capacity;
+			parkingLot.compactParkingSpots = new HashMap<>();
+		}
+		return parkingLot;
+	}
+
 	public int getCapacity() {
 		return capacity;
 	}
 
 	public Map<Integer, ParkingSpot> getCompactParkingSpots() {
 		return compactParkingSpots;
-	}
-
-	public ParkingLot(final int capacity) {
-		if (capacity > MAX_CAPACITY || capacity <= 0) {
-			throw new ParkingLotException("Invalid capacity given for parking lot.");
-		}
-		this.capacity = capacity;
-		this.compactParkingSpots = new HashMap<>();
 	}
 
 	/**
@@ -90,8 +99,8 @@ public class ParkingLot {
 
 	// Made method as 'synchronized' to allow multiple entrances in future
 	public synchronized void assignNewParkingTicket(Vehicle vehicle) {
-		 ParkingTicket parkingTicket = new ParkingTicket(RandomTicketIdUtil.createTicketId());
-		 vehicle.assignTicket(parkingTicket);
+		ParkingTicket parkingTicket = new ParkingTicket(RandomTicketIdUtil.createTicketId());
+		vehicle.assignTicket(parkingTicket);
 	}
 
 }
