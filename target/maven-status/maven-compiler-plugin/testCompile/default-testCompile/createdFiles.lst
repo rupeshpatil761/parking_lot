@@ -1,2 +1,3 @@
 com\parkinglot\command\CreateParkingLotCommandTest.class
 com\parkinglot\AppTest.class
+com\parkinglot\command\ParkCommandTest.class
