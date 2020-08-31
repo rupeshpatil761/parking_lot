@@ -42,23 +42,26 @@ public class LeaveCommandExecutor extends CommandExecutor {
 		List<ParkingSpot> occupiedSpots = parkingLotService.getOccupiedParkingSpots();
 		Optional<ParkingSpot> spotMatchingRegNo = occupiedSpots.stream().filter(spot -> spot.getParkedVehicle().getRegistrationNumber().equals(vehicleNumber)).findFirst();
 		int spotNumber = 0;
-		double paymentAmount = 10;
 		if(spotMatchingRegNo.isPresent()) {
 			spotNumber = spotMatchingRegNo.get().getSpotNumber();
 			Vehicle vehicle = spotMatchingRegNo.get().getParkedVehicle();
-			if(numHours>2) {
-				paymentAmount = paymentAmount + 10 *(numHours - 2);
-			}
 			ParkingTicket ticket = vehicle.getTicket();
 			ticket.setPayedAt(new Date());
-			ticket.setPaymentAmount(BigDecimal.valueOf(paymentAmount));
+			ticket.setPaymentAmount(BigDecimal.valueOf(calculateCharges(numHours)));
 			ticket.setStatus(ParkingTicketStatus.PAID);
-			System.out.println(vehicle);
+			parkingLotService.makeSlotFree(spotNumber);
+			String msg = "Registration number "+ vehicleNumber +" with Spot Number "+ spotNumber +" is free with Charge $"+ ticket.getPaymentAmount();
+			displayBoard.printWithNewLine(msg);
 		} else {
-			throw new VehicleNotFoundException();
+			displayBoard.printWithNewLine("Registration number "+vehicleNumber+" not found");
 		}
-		parkingLotService.makeSlotFree(spotNumber);
-		String msg = "Registration number "+ vehicleNumber +" with Spot Number "+ spotNumber +" is free with Charge "+ paymentAmount;
-		displayBoard.printWithNewLine(msg);
+	}
+	
+	private double calculateCharges(int numHours) {
+		double paymentAmount = 10;
+		if(numHours>2) {
+			paymentAmount = paymentAmount + 10 *(numHours - 2);
+		}
+		return paymentAmount;
 	}
 }

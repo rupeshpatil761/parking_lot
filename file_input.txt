@@ -7,3 +7,13 @@ park MH-19-AB-6786
 park MH-20-AB-5464
 status
 leave MH-15-AB-1312 6
+status
+park MH-12-AB-9632
+park MH-21-AB-8541
+leave MH-16-AB-6546 4
+leave MH-19-AB-6786 6
+leave MH-20-AB-5465 2
+park MH-20-AB-5474
+park MH-22-AB-8462
+park MH-13-AB-9635
+status
