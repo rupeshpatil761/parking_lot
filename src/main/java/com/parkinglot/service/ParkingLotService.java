@@ -3,6 +3,7 @@ package com.parkinglot.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import com.parkinglot.exception.ParkingLotException;
 import com.parkinglot.model.ParkingLot;
@@ -84,6 +85,14 @@ public class ParkingLotService {
 			}
 		}
 		return occupiedSpotList;
+	}
+	
+	public Optional<ParkingSpot> getMatchingParkingSpots(List<ParkingSpot> list, String vehicleNumber) {
+		return list.stream().filter(spot -> spot.getParkedVehicle().getRegistrationNumber().equals(vehicleNumber)).findFirst();
+	}
+	
+	public Optional<ParkingSpot> getMatchingParkingSpots(String vehicleNumber) {
+		return this.getOccupiedParkingSpots().stream().filter(spot -> spot.getParkedVehicle().getRegistrationNumber().equals(vehicleNumber)).findFirst();
 	}
 
 	private void validateParkingLotExists() {
