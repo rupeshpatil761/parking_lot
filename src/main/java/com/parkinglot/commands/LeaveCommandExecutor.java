@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Optional;
 
 import com.parkinglot.constants.ParkingTicketStatus;
-import com.parkinglot.exception.VehicleNotFoundException;
 import com.parkinglot.model.Command;
 import com.parkinglot.model.ParkingSpot;
 import com.parkinglot.model.ParkingTicket;
@@ -58,6 +57,7 @@ public class LeaveCommandExecutor extends CommandExecutor {
 	}
 	
 	private double calculateCharges(int numHours) {
+		// for first two hours charges will be $10
 		double paymentAmount = 10;
 		if(numHours>2) {
 			paymentAmount = paymentAmount + 10 *(numHours - 2);

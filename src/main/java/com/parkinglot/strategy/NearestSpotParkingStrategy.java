@@ -39,6 +39,7 @@ public class NearestSpotParkingStrategy implements ParkingStrategy {
     if (slotTreeSet.isEmpty()) {
       throw new NoFreeSpotAvailableException();
     }
+    // change here to get the free slot as per requirement. 
     return this.slotTreeSet.first();
   }
 }

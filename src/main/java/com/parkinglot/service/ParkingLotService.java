@@ -38,7 +38,7 @@ public class ParkingLotService {
 	/**
 	 * Parks a {@link Vehicle} into the parking lot. {@link ParkingStrategy} is used
 	 * to decide the spot number and then the vehicle is parked into the
-	 * {@link ParkingLot} into that spot number.
+	 * {@link ParkingLot} spot number.
 	 *
 	 * @param vehicle
 	 *            Vehicle to be parked.

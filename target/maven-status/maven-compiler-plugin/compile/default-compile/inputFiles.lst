@@ -3,7 +3,6 @@ D:\GitClient\parking_lot\src\main\java\com\parkinglot\commands\CommandExecutor.j
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\commands\LeaveCommandExecutor.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\exception\SpotAlreadyOccupiedException.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\model\CompactSpot.java
-D:\GitClient\parking_lot\src\main\java\com\parkinglot\strategy\NearestSpotParkingStrategyNew.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\strategy\ParkingStrategy.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\exception\InvalidSpotException.java
 D:\GitClient\parking_lot\src\main\java\com\parkinglot\exception\NoFreeSpotAvailableException.java
