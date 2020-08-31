@@ -39,7 +39,8 @@ public class LeaveCommandExecutor extends CommandExecutor {
 	public void execute(final Command command) {
 		final String vehicleNumber = command.getParams().get(0);
 		final Integer numHours = Integer.parseInt(command.getParams().get(1));
-		Optional<ParkingSpot> spotMatchingRegNo = parkingLotService.getMatchingParkingSpots(vehicleNumber);
+		List<ParkingSpot> occupiedParkingSpots = parkingLotService.getOccupiedParkingSpots();
+		Optional<ParkingSpot> spotMatchingRegNo = parkingLotService.getMatchingParkingSpots(occupiedParkingSpots,vehicleNumber);
 		int spotNumber = 0;
 		if(spotMatchingRegNo.isPresent()) {
 			spotNumber = spotMatchingRegNo.get().getSpotNumber();
