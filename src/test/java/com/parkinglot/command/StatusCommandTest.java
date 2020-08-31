@@ -4,11 +4,19 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import com.parkinglot.commands.StatusCommandExecutor;
+import com.parkinglot.model.Car;
 import com.parkinglot.model.Command;
+import com.parkinglot.model.CompactSpot;
+import com.parkinglot.model.ParkingSpot;
 import com.parkinglot.service.ParkingLotService;
 import com.parkinglot.util.DisplayBoard;
 
@@ -35,30 +43,30 @@ public class StatusCommandTest {
 		assertFalse(statusCommandExecutor.validate(new Command("status 2 3")));
 	}
 
-	/*@Test
+	@Test
 	public void testCommandExecutionWhenParkingLotIsEmpty() {
-		List<Slot> occupiedSlots = new ArrayList<>();
-		when(parkingLotService.getOccupiedSlots()).thenReturn(occupiedSlots);
+		List<ParkingSpot> occupiedSlots = new ArrayList<>();
+		Mockito.when(parkingLotService.getOccupiedParkingSpots()).thenReturn(occupiedSlots);
 		statusCommandExecutor.execute(new Command("status"));
-		verify(parkingLotService).getOccupiedSlots();
-		verify(outputPrinter).parkingLotEmpty();
-	}*/
+		Mockito.verify(parkingLotService).getOccupiedParkingSpots();
+		Mockito.verify(displayBoard).parkingLotEmpty();
+	}
 
-	/*@Test
+	@Test
 	public void testCommandExecutionWithOccupiedParkingLot() {
-		final Slot slot1 = new Slot(1);
-		slot1.assignCar(new Car("reg-1", "white"));
+		final CompactSpot spot1 = new CompactSpot(1);
+		spot1.assignVehicle(new Car("car-1"));
 
-		final Slot slot2 = new Slot(2);
-		slot2.assignCar(new Car("reg-2", "blue"));
+		final CompactSpot spot2 = new CompactSpot(2);
+		spot2.assignVehicle(new Car("car-2"));
 
-		when(parkingLotService.getOccupiedSlots()).thenReturn(Arrays.asList(slot1, slot2));
+		Mockito.when(parkingLotService.getOccupiedParkingSpots()).thenReturn(Arrays.asList(spot1, spot2));
 
 		statusCommandExecutor.execute(new Command("status"));
 
-		verify(parkingLotService).getOccupiedSlots();
-		verify(outputPrinter).statusHeader();
-		verify(outputPrinter).printWithNewLine("1           reg-1              white");
-		verify(outputPrinter).printWithNewLine("2           reg-2              blue");
-	}*/
+		Mockito.verify(parkingLotService).getOccupiedParkingSpots();
+		Mockito.verify(displayBoard).statusHeader();
+		Mockito.verify(displayBoard).printWithNewLine("1           car-1");
+		Mockito.verify(displayBoard).printWithNewLine("2           car-2");
+	}
 }

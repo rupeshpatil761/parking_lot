@@ -35,7 +35,7 @@ public class DisplayBoard {
 	}
 
 	public void invalidFile() {
-		printWithNewLine("Invalid file given.");
+		System.out.print("Invalid file given.");
 	}
 
 	public void printWithNewLine(final String msg) {
